@@ -1,0 +1,14 @@
+#sgn{
+    height: 500px;
+    width: 200px;
+    background-color: gray;
+    border: 2px solid black;
+}
+.para1{
+background-color: green;
+color: red;
+}
+.neww2{
+    background-color: yellow;
+    color: black;
+}

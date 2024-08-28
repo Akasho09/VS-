@@ -1,0 +1,12 @@
+git clone link
+
+
+git init
+git add nCr.cpp
+git commit -m 'hi'
+git remote add origin https://github.com/Akasho09/sem5.git 
+git push origin main
+
+
+
+-->git remote rm origin

@@ -1,0 +1,104 @@
+html{
+    display: flex;
+    justify-content: center;
+}
+*{
+    margin:0;
+    padding:0;
+    text-transform: capitalize;
+}
+body{
+    width:250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    min-height: 90vh;
+    background-color: #f4e4ba;
+}
+
+form {
+    padding:2rem;
+    border-radius: 2rem;
+    /* min-height: 25vh; */
+    width: 20%;
+    background-color: #d6ccc2;
+    width: 100%;
+} 
+
+#amount {
+    margin-top: 1rem;
+}
+#amount input {
+height:2rem;
+border-radius: 1rem;
+margin-top: 5px;
+}
+#main{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+    #main button{
+        /* margin-top: 1rem; */
+        background: none;
+        border: 0;
+        cursor:e-resize;
+    }
+    
+    #from, #to{
+        display: flex;
+        height: 3rem;
+        padding: 4px;
+        border: 2px solid rgb(204, 194, 188);
+        border-radius: 1rem;
+        justify-content: center;
+    }
+    #from img, #to img {
+        height: 36px;
+        width: 36px;
+
+    }
+#from, #to ,#amount input, #convert{
+    margin-bottom:1rem;
+    width: 100%;
+    /* background-color: green; */
+}
+#to {
+    margin-left: 1.5rem;
+}   
+#from{
+    margin-right: 1.5rem;
+}
+#from select ,#to select {
+    outline: none;
+    border: none;
+padding-top: 5px;
+background-color: #d6ccc2;
+
+}
+#convert{
+    margin-top: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: seashell;
+    cursor: pointer;
+}
+.namess{
+font-size: small;
+}
+#date{
+    border: 0;
+    background-color: #f4e4ba;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 3.5rem;
+}
+#btn12{
+    border: 0;
+    background-color: #f4e4ba;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 3.5rem;
+    }

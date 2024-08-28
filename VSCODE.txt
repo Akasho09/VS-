@@ -1,0 +1,4 @@
+g++ a.cpp -o temp
+./temp
+g++ -std=c++11 setmatrixzero.cpp -o a
+./a

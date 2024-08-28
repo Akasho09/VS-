@@ -1,0 +1,6 @@
+SQL can do Create Read Update Delete (CRUD)
+*change in already executed
+mysql -u root -p
+USE mysql;
+show databases;
+SELECT DISTINCT name FROM client_master; // Distint names in name column

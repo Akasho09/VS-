@@ -1,0 +1,193 @@
+ssh akash09@192.168.64.2
+
+open akash.png 
+scp akash.png akash09@192.168.64.2 //Copy image from pc to linux machine
+
+/*
+The line '#!/bin/bash' at the beginning of a shell script is called a shebang line
+*/
+
+read -p "Enter first number: " num1  --> READ NUM1 AND PRINT MSG 
+
+
+->sum
+sum=$((num1 + num2)) or
+l=$(expr $i + $j) or 
+k=$(bc <<< "$a + $b")  ----  { " <<< " (here-string) --> This redirects the following string as the standard input for the command following it }
+-> float sum
+sum=$(bc <<< "$num1 + $num2")
+sum=$(echo "$num1 + $num2" | bc)
+--> division
+if [[ $num2 -eq 0 ]]; then
+  echo "Error: Division by zero"
+else
+  division=$((num1 / num2))
+  echo "The division is: $division"
+fi
+--> SI 
+interest=$(echo " $principal * $time * $rate / 100" | bc) or
+pi=$(bc <<< "scale=2; $p * $r * $t / 100")
+-> add stringscale=2;
+str1+=$str2
+-> comapare numbers 
+-gt ~ is greater than
+->uppercase to lower
+$(tr [:upper:] [:lower:] <<< $uppercase )
+uppercase=$(echo $str | tr 'a-z' 'A-Z')
+
+//multicode
+nano myscript.sh
+chmod +x myscript.sh
+./myscript.sh
+cat myscript.sh //to see content of file in terminal
+
+vi ak.sh
+:wq :x
+chmod
+./
+
+--> greater of 2 numbers
+command : nano akash
+num1="$1"
+num2="$2"
+if [[ $num1 -gt $num2 ]]; then
+echo "num1 $num1 is greater "
+else
+echo "num2 $num2 is greater"
+fi
+chmod +x akash
+./akash 20 30
+-->   decimal to Binary
+#!/bin/bash
+read -p "Enter a decimal number: " num
+
+if [[ $num -eq 0 ]]; then
+  echo "Binary: 0"
+else
+  binary=""
+  while [[ $num -gt 0 ]]; do
+    binary=$((num % 2))"$binary"
+    num=$((num / 2))
+  done
+  echo "Binary: $binary"
+fi
+--> check permissions
+#!/bin/bash
+read -p "Enter file path: " filepath
+
+if [[ ! -f $filepath ]]; then
+  echo "Error: File does not exist."
+else
+  permissions=$(ls -l $filepath | cut -d ' ' -f 1)
+  echo "File permissions: $permissions"
+fi
+--> HCF AND LCM
+#!/bin/bash
+read -p "Enter first number: " num1
+read -p "Enter second number: " num2
+
+# Find HCF
+hcf=$num1
+while [[ $num2 -gt 0 ]]; do
+  temp=$hcf
+  hcf=$num2
+  num2=$((temp % num2))
+done
+
+# LCM using the relation LCM * HCF = num1 * num2
+lcm=$((num1 * num2 / hcf))
+
+echo "HCF: $hcf"
+echo "LCM: $lcm"
+
+
+
+
+# ping ipaddress
+----The ping command in Linux is a network utility used to test connectivity between your 
+computer and another device on a network----
+control c --->to cancel
+ping -c 3 www.google.com   ---> It works by sending packets (datagrams) to the specified
+ host (computer) and waiting for a response.  ---here only 3 times thats done
+ ping -a www.google.com ---sound on responses
+
+# ---tr command
+tr [OPTION] SET1 [SET2]
+ The tr command is a UNIX command-line utility for translating or deleting characters. 
+ It supports a range of transformations including uppercase to lowercase, squeezing repeating characters, 
+ deleting specific characters, and basic find and replace. 
+ It can be used with UNIX pipes to support more complex translation. tr stands for translate.
+ $ cat greekfile | tr [a-z] [A-Z]
+
+
+
+# --head and tail
+head and tail commands in Linux are both used for viewing the contents of text files,
+but they target different parts of the file
+head:
+Used to display the beginning (first lines) of a file.
+By default, it shows the first 10 lines.
+tail:
+Used to display the end (last lines) of a file.
+By default, it shows the last 10 lines.
+command [OPTION] [NUMBER] FILE
+command ->head or tail
+number ->no of lines
+head -n 5 myfile.txt  --->first 5 lines
+head -c 10 geekfilee   -->10 bytes only
+
+
+
+# ---grep
+The grep command is a fundamental tool in Linux for searching plain text data.
+ It's named after the ed command g/re/p which stands for "globally search for a regular expression and print." 
+ grep [OPTIONS] PATTERN FILE
+ grep -c ak geekfilee  ->no of lines matching pattern ak (count)
+ grep -w ak geekfilee -> exact match of ak (whole)
+ grep -e ak -e sh geekfilee -> multiple keywords ak & sh
+ egrep 'akash|ahmad|malik|shahid' geekfilee -> multiple
+ grep -E 'akash|shahid' geekfilee ->multiple  
+ grep -v ak geekfilee -->This prints out all the lines that do not matches the pattern 
+ grep -i Ak geekfilee --> The -i option enables to search for a string case insensitively in the given file. It matches the words like “UNIX”, “Unix”, “unix”.
+ grep -f keywords geekfilee  -> finds all keywords in keywords file in geekfilee 
+ grep '^akash' geekfilee -> all lines starting with akash
+ grep 'akash $' geekfilee -> all lines ending with akash
+ grep -R -f  keywords . -> Searches all keywords Recursively in current directory (.) 
+ grep -qs akash geekfilee -> executes command but does not print , echo $? can be used then to check if y or n (quietly) 
+ grep -rn "pattern" /path/to/directory  -> recusicely search & print along with line no
+ grep -m 5 "pattern" file.txt  -> limit lines
+ grep -s "pattern" file.txt  -> supress error mesaage
+ --CHECK---
+#  grep -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b' file.txt 
+
+# find
+find [start_directory] [options]
+find . -name log.txt  // finds all file names as log.txt from cd and its subdirectories
+find ~/Desktop -name log.txt 
+find ~/Desktop -type f -size +50M
+find . -cmin +60  //all files modified in last 1 hour
+locate akash.png  // gives location of a file
+
+
+
+
+# --pipingg 
+grep ak geekfilee | wc -l  ---> o/p of first command is used a sinput of second
+ls |grep akash 
+cat geekfilee new | tee xyz  -->displays contents of geekfilee and xyz and appends it to xyz
+ls D* | tee new --> finds all files staring with D and appends them to "new" file 
+who | grep 'computer' | tee /dev/tty | wc -l
+
+//check same content
+if cmp -s "$file1" "$file2"; then
+    echo "Files have the same content. Deleting $file2"
+    rm "$file2"
+else
+    echo "Files have different content."
+fi
+
+
+
+
+
+write a shell script which reports names and sizes of all files in a directory whose size > 512bytes. filenames should be print in descending order of sizes. total no. of files should also be rep

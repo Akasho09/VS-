@@ -1,0 +1,90 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap'); */
+*{
+    margin:0 ;
+    padding: 0;
+}
+.mainbody{
+height: 72%;
+background-color: #1e1c1c;
+color: white;
+}
+button, .playbutton ,#urlofsong{
+    cursor: pointer;
+    border: 0;
+}
+.bottom{
+    height: 60px;
+    width: 100%;
+    position:fixed;
+    bottom: 0px;   
+
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.songname{
+    width:8%;
+margin: 0 5px 0 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.songname p{
+    text-align: center;
+    font-weight:normal;
+    font-size: large;
+}
+#artist{
+   font-size:x-small;
+   font-family: 'Open Sans', sans-serif;  
+}
+.playing{
+    width: 77%;
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.playing i{
+    margin-right: 1.5rem;
+}
+
+#duration{
+    margin-top: 0.5rem;
+}
+#duration input{
+   width:50%;
+}
+
+.volume{
+    width:15%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.volume i{
+    padding-top:10%;
+    margin:0 .25rem 0 .25rem;
+}
+#playbuttonid{
+    background-color: black;
+    border: 0;
+}
+.searchedsongs{
+    margin-top: 1rem;
+    background-color: #694b4b;
+}
+.searchedsongs li{
+    margin-top: 1rem;
+    background-color:hotpink;
+    height: 100px;
+}
+#urlofsong{
+    padding-bottom: 70px;
+}
+#userData{
+    color: white;
+}

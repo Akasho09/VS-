@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.883);
+  }
+
+  .board {
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+    /* border: 2px solid black; */
+  }
+
+  .square.oddd:nth-child(odd) {
+    background-color: #edeed1;
+}
+  .square.oddd:nth-child(even) {
+    background-color: #779952;
+  }
+
+  .square.evenn:nth-child(even) {
+    background-color: #edeed1;
+}
+  .square.evenn:nth-child(odd) {
+    background-color:  #779952;
+  }
+
+  
+  .square {
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid black; */
+  }
+
+ 
+.player1{
+    display: flex;
+}
+.player2{
+    display: flex;
+}
+
+  .player1  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .player2  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .player1 span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .player2 span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .square img {
+    align-items: center;
+    padding-bottom: 4px;
+    height: 70px;
+    width: 70px;
+  }
+  
+  .player{
+    padding: 1rem;
+    position: relative;
+    align-self:auto;
+    color: white;
+  }
+  .square:hover{
+    cursor: pointer;
+  }
+
+  #innercircle{
+    /* display: none; */
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    /* align-self: center; */
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.549);
+  }
+  .zIndexClass{
+    z-index:3;
+  }
